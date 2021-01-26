@@ -1,8 +1,10 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import db from '../db.json'
-import HeadConfig from './_head'
+/* eslint-disable no-shadow */
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import db from '../db.json';
+import HeadConfig from './_head';
 
-const theme = db.theme
+const { theme } = db;
 
 const GlobalStyle = createGlobalStyle`
  body {
@@ -22,16 +24,18 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-`
+`;
 
+// eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
   return (
     <>
       <HeadConfig />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }
