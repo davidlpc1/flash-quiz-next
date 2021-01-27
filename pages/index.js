@@ -84,7 +84,7 @@ export default function Home() {
               />
 
               <Button type="submit" disabled={name.trim().length === 0}>
-                Jogar
+                Jogar como
                 {' '}
                 { name }
               </Button>
