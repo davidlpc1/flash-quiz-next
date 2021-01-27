@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
@@ -18,7 +20,52 @@ export const QuizContainer = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  display:flex;
+  margin:20px;
+  gap:10px;
+  flex-direction:column;
+`;
+
+export const Input = styled.input`
+  color:${({ theme }) => theme.colors.contrastText};
+  padding:10px;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.mainBg};
+  outline:0;
+  display: block;
+`;
+
+export const Button = styled.button`
+  background-color: ${({ theme }) => theme.colors.wrong};
+  color:${({ theme }) => theme.colors.contrastText};
+  font-weight: 700;
+  text-transform:uppercase;
+  outline:0;
+  border:0;
+  border-radius:4px;
+  padding:10px;
+  cursor:pointer;
+
+  &:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+  }
+`;
+
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    router.push(`/quiz?name=${name}`);
+  };
+
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -29,6 +76,19 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
+            <Form onSubmit={handleSubmit}>
+              <Input
+                placeholder="Diz aí seu nome"
+                onChange={handleChange}
+                maxLength={30}
+              />
+
+              <Button type="submit" disabled={name.trim().length === 0}>
+                Jogar
+                {' '}
+                { name }
+              </Button>
+            </Form>
           </Widget.Content>
         </Widget>
 
