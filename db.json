@@ -4,9 +4,9 @@
     "description": "Teste os seus conhecimentos sobre Flash e vamos ver se você é bom",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/Sr29UdiE5nk0o/giphy.gif",
+        "image": "https://media.giphy.com/media/S6BLhq4ZOvIdN0WVEQ/giphy.gif",
         "title": "Qual é o real nome do flash ?",
-        "description": "...",
+        "description": "Vamos ver se você sabe ?",
         "answer": 0,
         "alternatives": [
           "Bartholomew Henry 'Barry' Allen",
@@ -16,7 +16,7 @@
         ]
       },
       {
-        "image": "https://media.giphy.com/media/Sr93CuKsocyqz3THAc/giphy.gif",
+        "image": "https://media.giphy.com/media/Sr93CuKsocyqz3THAc/giphy-downsized.gif",
         "title": "Essa cena é de qual temporada ??",
         "description": "Você é bom de memória ?? Hahahah",
         "answer": 1,
@@ -41,6 +41,7 @@
         "contrastText": "#FFFFFF",
         "wrong": "#FF5722",
         "success": "#4CAF50"
-      }
+      },
+      "borderRadius":"4px"
     }
   }

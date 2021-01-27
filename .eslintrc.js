@@ -27,5 +27,6 @@ module.exports = {
         message: 'Unexpected property on console object was called',
       },
     ],
+    'linebreak-style': ['error', process.env.NODE_ENV === 'prod' ? 'unix' : 'windows'],
   },
 };
