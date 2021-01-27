@@ -1,8 +1,9 @@
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
   background-color: #00000070;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: center;
   border-radius: 4px; 
@@ -32,7 +33,10 @@ export default function Footer(props) {
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
       </a>
       <p>
-        Orgulhosamente criado por <a href="https://github.com/davidlpc1"> Davi Lucas </a>durante
+        Orgulhosamente criado por
+        {' '}
+        <a href="https://github.com/davidlpc1"> Davi Lucas </a>
+        durante
         {' '}
         a
         {' '}
@@ -42,4 +46,4 @@ export default function Footer(props) {
       </p>
     </FooterWrapper>
   );
-} 
+}

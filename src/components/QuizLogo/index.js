@@ -41,4 +41,4 @@ const QuizLogo = styled(Logo)`
   }
 `;
 
-export default QuizLogo; 
+export default QuizLogo;
