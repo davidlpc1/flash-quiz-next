@@ -1,0 +1,47 @@
+{
+    "bg": "https://i.pinimg.com/originals/b4/2f/5c/b42f5c32e634db0bcc79156fba8fee0e.png",
+    "title": "Five nights at freddy's Quiz",
+    "description": "Teste os seus conhecimentos sobre Five nights at freddy's e vamos ver se você é bom",
+    "questions": [
+      {
+        "image": "https://media.giphy.com/media/NUicI56PINuzS/giphy.gif",
+        "title": "Quantas noites você fica na pizzaria?",
+        "description": "Essa é facil hein",
+        "answer": 1,
+        "alternatives": [
+          "10",
+          "5",
+          "3",
+          "7"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/on2bYwnc4rokw/giphy.gif",
+        "title": "Qual o nome desse personagem ??",
+        "description": "Você é bom de memória ?? Hahahah",
+        "answer": 2,
+        "alternatives": [
+          "Chica",
+          "Freddy",
+          "SpringTrap",
+          "Withered Bonnie"
+        ]
+      }
+    ],
+    "external": [
+      ""
+    ],
+    "theme": {
+      "colors": {
+        "before-primary": "#0d47a1",
+        "before-secondary": "#29b6f6",
+        "primary": "#d3190d",
+        "secondary": "#fdd036",
+        "mainBg": "#1C1814",
+        "contrastText": "#FFFFFF",
+        "wrong": "#FF5722",
+        "success": "#4CAF50"
+      },
+      "borderRadius":"4px"
+    }
+  }

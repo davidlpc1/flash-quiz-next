@@ -1,6 +1,5 @@
-/* eslint-disable linebreak-style */
 import React, { useState } from 'react';
-import styled from 'styled-components';
+
 import { useRouter } from 'next/router';
 
 import db from '../db.json';
@@ -9,50 +8,9 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
-
-export const Form = styled.form`
-  display:flex;
-  margin:20px;
-  gap:10px;
-  flex-direction:column;
-`;
-
-export const Input = styled.input`
-  color:${({ theme }) => theme.colors.contrastText};
-  padding:10px;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  outline:0;
-  display: block;
-`;
-
-export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.wrong};
-  color:${({ theme }) => theme.colors.contrastText};
-  font-weight: 700;
-  text-transform:uppercase;
-  outline:0;
-  border:0;
-  border-radius:4px;
-  padding:10px;
-  cursor:pointer;
-
-  &:disabled{
-    opacity:.6;
-    cursor:not-allowed;
-  }
-`;
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
   const router = useRouter();
@@ -63,9 +21,7 @@ export default function Home() {
     router.push(`/quiz?name=${name}`);
   };
 
-  const handleChange = (event) => {
-    setName(event.target.value);
-  };
+  const handleChange = (event) => setName(event.target.value);
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -77,19 +33,19 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
-            <Form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <Input
                 placeholder="Diz aí seu nome"
                 onChange={handleChange}
-                maxLength={30}
+                value={name}
+                name="Nome Do Usuário"
+                maxLength={25}
               />
 
               <Button type="submit" disabled={name.trim().length === 0}>
-                Jogar como
-                {' '}
-                { name }
+                {` Jogar como ${name} `}
               </Button>
-            </Form>
+            </form>
           </Widget.Content>
         </Widget>
 
