@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+import React from 'react';
 import Head from 'next/head';
 import db from '../db.json';
 
