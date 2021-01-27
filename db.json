@@ -4,25 +4,27 @@
     "description": "Teste os seus conhecimentos sobre Flash e vamos ver se você é bom",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
-        "answer": 2,
+        "image": "https://media.giphy.com/media/Sr29UdiE5nk0o/giphy.gif",
+        "title": "Qual é o real nome do flash ?",
+        "description": "...",
+        "answer": 0,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Bartholomew Henry 'Barry' Allen",
+          "Bartholomew Gustin 'Barry' Allen",
+          "Bart Allen 'Barry' Grant",
+          "Bart Allen 'Barry' Gustin"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
-        "answer": 0,
+        "image": "https://media.giphy.com/media/Sr93CuKsocyqz3THAc/giphy.gif",
+        "title": "Essa cena é de qual temporada ??",
+        "description": "Você é bom de memória ?? Hahahah",
+        "answer": 1,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+          "3° Temporada",
+          "5° Temporada",
+          "4° Temporada",
+          "6° Temporada"
         ]
       }
     ],
@@ -40,6 +42,5 @@
         "wrong": "#FF5722",
         "success": "#4CAF50"
       },
-      "borderRadius": "4px"
     }
   }
