@@ -3,7 +3,7 @@
 </h1>
 <h2 align="center">🚀 Feito na imersão React NextJS da Alura 🚀</h2>
 
-<img src=".github/md/home.png" alt="Home">
+<img src=".github/md/home.PNG" alt="Home">
 
 Content
 =================
