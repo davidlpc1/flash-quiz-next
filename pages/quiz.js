@@ -116,6 +116,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
+  const [correctAnswers, setCorrectAnswers] = useState(0);
 
   useEffect(() => {
     // nasce === didMount
@@ -132,15 +133,17 @@ export default function QuizPage() {
     if (currentAlternative === question.answer) {
       // eslint-disable-next-line no-alert
       alert('Correct!!');
-      const nextQuestion = questionIndex + 1;
-      if (nextQuestion < totalQuestions) {
-        setCurrentQuestion(nextQuestion);
-      } else {
-        setScreenState(screenStates.RESULT);
-      }
+      setCorrectAnswers((old) => old + 1);
     } else {
       // eslint-disable-next-line no-alert
-      alert('Wrong!! Try Again');
+      alert('Wrong!!');
+    }
+
+    const nextQuestion = questionIndex + 1;
+    if (nextQuestion < totalQuestions) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setScreenState(screenStates.RESULT);
     }
   }
 
@@ -159,7 +162,12 @@ export default function QuizPage() {
 
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === screenStates.RESULT && <div>Você acertou X questões, parabéns!</div>}
+        {screenState === screenStates.RESULT && (
+          <div>
+            {` Você acertou ${correctAnswers}  questõe(s),`}
+            {correctAnswers === 0 ? 'que pena' : 'parabéns!'}
+          </div>
+        )}
       </QuizContainer>
     </QuizBackground>
   );
