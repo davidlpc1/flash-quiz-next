@@ -1,69 +1,57 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import Lottie from 'react-lottie';
 import Widget from '../Widget';
 
-const rotate = keyframes`
-    0% {
-        top: 8px;
-        height: 64px;
-    }
-    50%, 100% {
-        top: 24px;
-        height: 32px;
-    }
-`;
+import animationData from './loading.json';
 
-const Flex = styled.div`
+const LottieContainer = styled.div`
     display:flex;
     width:100%;
     justify-content: center;
     align-items: center;
-`;
 
-const Container = styled.div`
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-
-    div{
-        display: inline-block;
-        position: absolute;
-        left: 8px;
-        width: 16px;
-        background: ${({ theme }) => theme.colors.secondary};
-        animation: ${rotate} 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
-    }
-
-    div:nth-child(1) {
-        left: 8px;
-        animation-delay: -0.24s;
-    }
-
-    div:nth-child(2) {
-        left: 32px;
-        animation-delay: -0.12s;
-    }
-
-    div:nth-child(3) {
-        left: 56px;
-        animation-delay: 0;
-    }
+    pointer-events:none;
 `;
 
 export default function LoadingWidget() {
+  // eslint-disable-next-line no-unused-vars
+  const [animationState, setAnimationState] = useState({
+    isStopped: false, isPaused: false,
+  });
+
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: '0' },
+        hidden: { opacity: 0, y: '100%' },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>Loading...</Widget.Header>
 
       <Widget.Content>
-        <Flex>
-          <Container>
-            <div />
-            <div />
-            <div />
-          </Container>
-        </Flex>
+
+        <LottieContainer>
+          <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData,
+              rendererSettings: {
+                preserveAspectRatio: 'xMidYMid slice',
+              },
+            }}
+            height={300}
+            width={300}
+            isStopped={animationState.isStopped}
+            isPaused={animationState.isPaused}
+          />
+        </LottieContainer>
 
       </Widget.Content>
     </Widget>

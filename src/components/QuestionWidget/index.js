@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useCallback } from 'react';
 
+import { motion } from 'framer-motion';
+
 import Widget from '../Widget';
 import Button from '../Button';
 import AlternativesForm from '../AlternativesForm';
@@ -31,7 +33,16 @@ export default function QuestionWidget({
   }, [isCorrect, isQuestionSubmited, selectedAlternative]);
 
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: '0' },
+        hidden: { opacity: 0, y: '100%' },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <BackLinkArrow href="/" />

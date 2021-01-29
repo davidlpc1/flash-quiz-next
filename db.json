@@ -29,7 +29,9 @@
       }
     ],
     "external": [
-      ""
+      "https://alura-quiz-avengers.fernanda-kipper.vercel.app/",
+      "https://aluraquiz-devsoutinho.omariosouto.vercel.app/",
+      "https://covid19quiz.felipepereirapinto.vercel.app/"
     ],
     "theme": {
       "colors": {

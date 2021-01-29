@@ -58,11 +58,16 @@ Widget.Topic = styled.a`
   cursor: pointer;
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: .3s;
+  border:0;
   display: block;
   
   &:hover,
   &:focus {
     opacity: .5;
+  }
+
+  &:disabled{
+    cursor: not-allowed;
   }
 `;
 

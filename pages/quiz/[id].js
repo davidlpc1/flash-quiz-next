@@ -1,31 +1,34 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-import React from 'react';
 
-export default function QuizDaGalera(props) {
-  const { id } = props.params;
-  console.log('WEB:', id);
+import React from 'react';
+import QuizScreen from '../../src/screens/Quiz';
+
+export default function QuizDaGalera({ externalDb }) {
   return (
-    <div style={{ color: '#000' }}>
-      <p>Desafio da próxima aula junto com as animações</p>
-      {`O Id da page é ${id}`}
-    </div>
+    <QuizScreen db={externalDb} />
   );
 }
 
-export async function getStaticPaths() {
-  const allIds = ['sonic', 'flash', 'alura', 'futebol', 'js', 'vercel', 'ts'];
-  return {
-    paths: allIds.map((id) => ({
-      params: {
-        id,
-      },
-    })),
-    fallback: false,
-  };
-}
+export async function getServerSideProps({ query, res }) {
+  const [repoName, githubUser] = query.id.split('___');
 
-export async function getStaticProps({ params }) {
-  console.log('SERVER:', params.id);
-  return { props: { params } };
+  try {
+    const externalDb = await fetch(`https://${repoName}.${githubUser}.vercel.app/api/db`)
+      .then((response) => {
+        if (response.ok) return response.json();
+
+        throw new Error('Falha em entregar os dados');
+      })
+      .then((resObj) => resObj);
+
+    return {
+      props: {
+        externalDb,
+      },
+    };
+  } catch (err) {
+    // res.redirect...
+    console.error(err);
+    throw new Error(err.message);
+  }
 }
