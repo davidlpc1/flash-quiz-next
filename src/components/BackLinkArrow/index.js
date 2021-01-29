@@ -1,28 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Link from '../Link';
 
-import Link from 'next/link';
-import Image from 'next/image';
+const StyledLink = styled(Link)`
+  transition: .3s;
+  &:hover {
+    opacity: .5;
+  }
+`;
 
-const StyledLink = styled.a`
-    margin-right:10px;
-    cursor:pointer;
+const SVG = styled.svg`
+  vertical-align: middle;
 `;
 
 export default function BackLinkArrow({ href }) {
   return (
-    <Link href={href}>
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <StyledLink>
-        <Image
-          src="/back-arrow.png"
-          alt="Back"
-          width={32}
-          height={32}
-        />
-      </StyledLink>
-    </Link>
+    <StyledLink href={href} style={{ width: '24px', height: '24px', display: 'inline-block' }}>
+      <SVG xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path fillRule="evenodd" clipRule="evenodd" d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="white" fillOpacity="0.87" />
+      </SVG>
+    </StyledLink>
   );
 }
 
