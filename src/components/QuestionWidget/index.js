@@ -57,7 +57,7 @@ export default function QuestionWidget({
         alt="Descrição"
         style={{
           width: '100%',
-          height: '150px',
+          height: '200px',
           objectFit: 'cover',
         }}
         src={question.image}

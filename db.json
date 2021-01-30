@@ -38,6 +38,51 @@
           "Barry do futuro(Resquicio do tempo)",
           "Kid flash de outro mundo"
         ]
+      },
+      {
+        "image": "https://media.giphy.com/media/TVSCxEMivgkuY/giphy-downsized.gif",
+        "title": "Qual é a abertura de the flash",
+        "description": "Essa aí é famosa hahaah",
+        "answer": 1,
+        "alternatives": [
+          "Meu nome é Bart Allen, e eu sou o homem menos rápido do mundo,para o resto do mundo eu sou apenas mais um cientista maluco,mas secretamente com ajuda dos meu colegas do laboratórios Star eu luto contra o crime e encontro outros meta-humanos como eu...",
+
+          "Meu nome é Barry Allen, e eu sou o homem mais rápido do mundo,para o resto do mundo eu sou apenas mais um cientista forense,mas secretamente com ajuda dos meu amigos do laboratórios Star eu luto contra o crime e encontro outros meta-humanos como eu...",
+
+          "Meu nome é Barry Allen, e eu sou o cara mais rápido do mundo,para o resto do mundo eu sou apenas mais um cientista,mas secretamente com ajuda dos meu colegas do laboratórios Star eu luto contra o crime e encontro outros meta-humanos como eu...",
+
+          "Meu nome é Barry Allen, e eu sou o homem mais rápido do mundo,para o resto do mundo eu sou apenas mais um cientista forense,mas com ajuda dos meu amigos do laboratórios Star eu luto contra o crime e encontro outros meta-humanos como eu..."
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/3ov9jYvhlAt2O6tiTK/giphy.gif",
+        "title": "Qual é o verdadeiro nome do Flash reverso",
+        "description": "Essa é fácil",
+        "answer": 3,
+        "alternatives": [
+          "Bart Allen",
+
+          "Eddie Thawne",
+
+          "Eobard Allen",
+
+          "Eobard Thawne"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/H7TlJ2fHKf2rxjoQcW/giphy-downsized.gif",
+        "title": "Como o Flash reverso conseguiu se duplicar ??",
+        "description": "Essa é da 1° Temporada",
+        "answer": 0,
+        "alternatives": [
+          "É Imagem atrasada,uma rápida miragem",
+
+          "É o reverso do futuro",
+
+          "Ele literalmente se duplicou",
+
+          "Ele se clonou com tecnologia do laboratórios Star"
+        ]
       }
     ],
     "external": [
