@@ -9,7 +9,7 @@ export default function QuizDaGalera({ externalDb }) {
   );
 }
 
-export async function getServerSideProps({ query, res }) {
+export async function getServerSideProps({ query }) {
   const [repoName, githubUser] = query.id.split('___');
 
   try {
@@ -27,7 +27,6 @@ export async function getServerSideProps({ query, res }) {
       },
     };
   } catch (err) {
-    // res.redirect...
     console.error(err);
     throw new Error(err.message);
   }

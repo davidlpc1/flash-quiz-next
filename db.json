@@ -7,10 +7,10 @@
         "image": "https://media.giphy.com/media/S6BLhq4ZOvIdN0WVEQ/giphy.gif",
         "title": "Qual é o real nome do flash ?",
         "description": "Vamos ver se você sabe ?",
-        "answer": 0,
+        "answer": 1,
         "alternatives": [
-          "Bartholomew Henry 'Barry' Allen",
           "Bartholomew Gustin 'Barry' Allen",
+          "Bartholomew Henry 'Barry' Allen",
           "Bart Allen 'Barry' Grant",
           "Bart Allen 'Barry' Gustin"
         ]
@@ -19,12 +19,24 @@
         "image": "https://media.giphy.com/media/Sr93CuKsocyqz3THAc/giphy-downsized.gif",
         "title": "Essa cena é de qual temporada ??",
         "description": "Você é bom de memória ?? Hahahah",
-        "answer": 1,
+        "answer": 3,
         "alternatives": [
           "3° Temporada",
-          "5° Temporada",
           "4° Temporada",
-          "6° Temporada"
+          "6° Temporada",
+          "5° Temporada"
+        ]
+      },
+      {
+        "image": "https://media.giphy.com/media/3oKIPxfG4ROBzNjH8c/giphy-downsized.gif",
+        "title": "Quem era Savitar na realidade",
+        "description": "Vamos lá você consegue!!",
+        "answer": 2,
+        "alternatives": [
+          "Gemeo do Barry do futuro esquecido pela família",
+          "Barry do passado",
+          "Barry do futuro(Resquicio do tempo)",
+          "Kid flash de outro mundo"
         ]
       }
     ],
