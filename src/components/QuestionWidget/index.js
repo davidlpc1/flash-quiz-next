@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 
 import { motion } from 'framer-motion';
 
@@ -17,12 +17,21 @@ export default function QuestionWidget({
 }) {
   const [selectedAlternative, setSelectedAlternative] = useState(undefined);
   const [isQuestionSubmited, setIsQuestionSubmited] = useState(false);
+
+  const wrongAnswerAudioRef = useRef();
+  const correctAnswerAudioRef = useRef();
+
   const isCorrect = selectedAlternative === question.answer;
   const questionId = `question_${questionIndex}`;
   const hasAlternativeSelected = selectedAlternative !== undefined;
 
   const handleForm = useCallback((event) => {
     event.preventDefault();
+    if (isCorrect) {
+      correctAnswerAudioRef.current.play();
+    } else {
+      wrongAnswerAudioRef.current.play();
+    }
     setIsQuestionSubmited(true);
     setTimeout(() => {
       addResult(isCorrect);
@@ -113,6 +122,21 @@ export default function QuestionWidget({
         </AlternativesForm>
 
       </Widget.Content>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <audio src="/Correct-Answer.mp3" ref={correctAnswerAudioRef}>
+        O seu navegador não suporta o elemento
+        {' '}
+        <code>audio</code>
+        .
+      </audio>
+
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <audio src="/Wrong-Answer.mp3" ref={wrongAnswerAudioRef}>
+        O seu navegador não suporta o elemento
+        {' '}
+        <code>audio</code>
+        .
+      </audio>
     </Widget>
   );
 }
